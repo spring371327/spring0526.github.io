@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/04/算法课第一次作业-选做1-5-6/算法课第一次作业-选做1-5-6/34.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/04/算法课第一次作业-选做1-5-6/算法课第一次作业-选做1-5-6/36.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/04/算法课第一次作业-选做1-5-6/算法课第一次作业-选做1-5-6/312.png">
-<meta property="og:updated_time" content="2018-10-05T12:38:09.464Z">
+<meta property="og:updated_time" content="2018-10-05T12:48:04.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法课第一次作业-选做1-5-6">
 <meta name="twitter:description" content="算法课第一次作业-选做1-5-6一、Divide and Conquer　　You are interested in analyzing some hard-to-obtain data from two separate databases. Each database contains n numerical values, so there are 2n values total and">
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.7k 字
+                  2.8k 字
                 </span>
               
 
@@ -535,6 +535,7 @@
 <h4 id="3、prove-the-correctness-1"><a href="#3、prove-the-correctness-1" class="headerlink" title="3、prove the correctness"></a>3、prove the correctness</h4><p>其中，计算左右两边的显著逆序数的时候，会同时将左右两边的子数组变成有序。在计算跨两边的数对所形成的显著逆序的时候，就不用进行暴力遍历，只需O(n)的遍历即可。当 <strong>L[i] &gt; 3*R[j]</strong> 时，RC += |L|-i 即可，L中位于下标 i 之后的数字就不用遍历了，自然要比 3*R[j] 大。 </p>
 <p>同时，计算过程是基于归并排序的，整个算法即正确。</p>
 <h4 id="4、the-complexity-of-this-algorithm-1"><a href="#4、the-complexity-of-this-algorithm-1" class="headerlink" title="4、the complexity of this algorithm"></a>4、the complexity of this algorithm</h4><p>计算左边的时间复杂度为 T(n/2)， 计算右边的时间复杂度为 T(n/2)， 合并的时间复杂度为 O(n)，所以总的时间复杂度为：<br>$$<br>\begin{align}<br>T(n) &amp;= 2T(\frac{n}{2}) + O(n)\\<br>&amp;= 2\left[2T(\frac{n}{2^2}) + O(\frac{n}{2})\right] + O(n)\\<br>&amp;= 2^iT(\frac{n}{2^i}) + i<em>O(n)\\<br>&amp;= ….=O(n</em>\log n)<br>\end{align}<br>$$</p>
+<p>$$<br>\begin{align}<br>T(n) &amp;= 2T(\frac{n}{2}) + O(n)\\<br>&amp;= 2\left[2T(\frac{n}{2^2}) + O(\frac{n}{2})\right] + O(n)\\<br>&amp;= 2^iT(\frac{n}{2^i}) + i<em>O(n)\\<br>&amp;= ….=O(n</em>\log n)\end{align}<br>$$</p>
 <h3 id="六、Divide-and-Conquer"><a href="#六、Divide-and-Conquer" class="headerlink" title="六、Divide and Conquer"></a>六、Divide and Conquer</h3><p>Given a table M consisting of 2n ∗ 2n blocks, we want to ﬁll it with a L-shaped module (consisting of three blocks). The L-shaped module is shown below.  </p>
 <p><img src="算法课第一次作业-选做1-5-6\31.png" alt=""></p>
 <p>Please give a ﬁll method, so that the last element of the table (M2n,2n) is empty.</p>
@@ -543,7 +544,7 @@
 <h4 id="1、problem-solving-ideas-and-pseudo-code-2"><a href="#1、problem-solving-ideas-and-pseudo-code-2" class="headerlink" title="1、problem-solving ideas and pseudo-code"></a>1、problem-solving ideas and pseudo-code</h4><p><strong>(1）problem-solving ideas</strong></p>
 <p>　　有一个特殊方格的棋盘覆盖问题，只不过，此题目将特殊方格定死了，只能为最右下角那个，即 P(size-1,size-1)那个小方格。</p>
 <p>　　该题关键在于如何划分各L型骨牌所在位置区域。我们发现，L型骨牌占三个方格，我们可以把棋盘从中央分为四块，那么这四块子棋盘中仅一块是有特殊方格的，可以用一块骨牌使得其他三块子棋盘均被覆盖。以此为原则，无论这种分法是否最终可解，我们首先保证了每个子棋盘都有一个特殊方格，所以，分治的模型就出来了。</p>
-<p>​           我们可以用递归来完成分治的任务。每次递归，chess_board(int posx,int posy,int x,int y,int size)，(posx,posy)为子棋盘左上角坐标,size为子棋盘大小，因为棋盘总为正方形，所以size为边长，那么这3个参数就确定了子棋盘的位置和大小；(x,y)表示子棋盘中特殊方格的位置，这个位置是由上层递归分配骨牌后决定的。以此为标准，递归流程为：</p>
+<p>　　我们可以用递归来完成分治的任务。每次递归，chess_board(int posx,int posy,int x,int y,int size)，(posx,posy)为子棋盘左上角坐标,size为子棋盘大小，因为棋盘总为正方形，所以size为边长，那么这3个参数就确定了子棋盘的位置和大小；(x,y)表示子棋盘中特殊方格的位置，这个位置是由上层递归分配骨牌后决定的。以此为标准，递归流程为：</p>
 <p>①判断边界，若当前棋盘大小为1，则无法再分割，递归结束。</p>
 <p>②定子棋盘中心位置。</p>
 <p>③判断特殊方格所在位置（左上，右上，左下，或右下）。</p>
@@ -865,7 +866,7 @@
     
       <span class="post-meta-item-text">本站共计&#58;</span>
     
-    <span title="本站共计">2.8k 字</span>
+    <span title="本站共计">2.9k 字</span>
   
 </div>
 
