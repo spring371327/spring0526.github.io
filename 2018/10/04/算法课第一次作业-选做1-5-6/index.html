@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/04/算法课第一次作业-选做1-5-6/算法课第一次作业-选做1-5-6/34.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/04/算法课第一次作业-选做1-5-6/算法课第一次作业-选做1-5-6/36.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/04/算法课第一次作业-选做1-5-6/算法课第一次作业-选做1-5-6/312.png">
-<meta property="og:updated_time" content="2018-10-05T12:34:11.862Z">
+<meta property="og:updated_time" content="2018-10-05T12:38:09.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法课第一次作业-选做1-5-6">
 <meta name="twitter:description" content="算法课第一次作业-选做1-5-6一、Divide and Conquer　　You are interested in analyzing some hard-to-obtain data from two separate databases. Each database contains n numerical values, so there are 2n values total and">
@@ -534,7 +534,7 @@
 <p><img src="算法课第一次作业-选做1-5-6\22.png" alt=""></p>
 <h4 id="3、prove-the-correctness-1"><a href="#3、prove-the-correctness-1" class="headerlink" title="3、prove the correctness"></a>3、prove the correctness</h4><p>其中，计算左右两边的显著逆序数的时候，会同时将左右两边的子数组变成有序。在计算跨两边的数对所形成的显著逆序的时候，就不用进行暴力遍历，只需O(n)的遍历即可。当 <strong>L[i] &gt; 3*R[j]</strong> 时，RC += |L|-i 即可，L中位于下标 i 之后的数字就不用遍历了，自然要比 3*R[j] 大。 </p>
 <p>同时，计算过程是基于归并排序的，整个算法即正确。</p>
-<h4 id="4、the-complexity-of-this-algorithm-1"><a href="#4、the-complexity-of-this-algorithm-1" class="headerlink" title="4、the complexity of this algorithm"></a>4、the complexity of this algorithm</h4><p>计算左边的时间复杂度为 T(n/2)， 计算右边的时间复杂度为 T(n/2)， 合并的时间复杂度为 O(n)，所以总的时间复杂度为：<br>$$<br>\begin{align}<br>T(n) &amp;= 2T(\frac{n}{2}) + O(n)\\<br>&amp;= 2[2T(\frac{n}{2^2}) + O(\frac{n}{2})] + O(n)\\<br>&amp;= 2^iT(\frac{n}{2^i}) + i<em>O(n)\\<br>&amp;=……=O(n</em>\log n)<br>\end{align}<br>$$</p>
+<h4 id="4、the-complexity-of-this-algorithm-1"><a href="#4、the-complexity-of-this-algorithm-1" class="headerlink" title="4、the complexity of this algorithm"></a>4、the complexity of this algorithm</h4><p>计算左边的时间复杂度为 T(n/2)， 计算右边的时间复杂度为 T(n/2)， 合并的时间复杂度为 O(n)，所以总的时间复杂度为：<br>$$<br>\begin{align}<br>T(n) &amp;= 2T(\frac{n}{2}) + O(n)\\<br>&amp;= 2\left[2T(\frac{n}{2^2}) + O(\frac{n}{2})\right] + O(n)\\<br>&amp;= 2^iT(\frac{n}{2^i}) + i<em>O(n)\\<br>&amp;= ….=O(n</em>\log n)<br>\end{align}<br>$$</p>
 <h3 id="六、Divide-and-Conquer"><a href="#六、Divide-and-Conquer" class="headerlink" title="六、Divide and Conquer"></a>六、Divide and Conquer</h3><p>Given a table M consisting of 2n ∗ 2n blocks, we want to ﬁll it with a L-shaped module (consisting of three blocks). The L-shaped module is shown below.  </p>
 <p><img src="算法课第一次作业-选做1-5-6\31.png" alt=""></p>
 <p>Please give a ﬁll method, so that the last element of the table (M2n,2n) is empty.</p>
